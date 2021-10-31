@@ -14,13 +14,26 @@ import HeaderView from './components/HeaderView.vue';
       <HeaderView />
     </el-header>
     <el-container>
-      <el-aside width="60px">
-        Aside
-        <el-button-group>
+      <el-aside width="56px">
+        <div>
+          Aside
+          <el-button-group>
+            <el-tooltip
+              class="item"
+              effect="light"
+              content="Right Top prompts info"
+              placement="right-start"
+              show-after="1000"
+            >
+              <el-button type="primary" icon="el-icon-edit"></el-button>
+            </el-tooltip>
+            <el-button type="primary" icon="el-icon-share"></el-button>
+            <el-button type="primary" icon="el-icon-delete"></el-button>
+          </el-button-group>
+        </div>
+        <div>
           <el-button type="primary" icon="el-icon-edit"></el-button>
-          <el-button type="primary" icon="el-icon-share"></el-button>
-          <el-button type="primary" icon="el-icon-delete"></el-button>
-        </el-button-group>
+        </div>
       </el-aside>
       <el-container>
         <el-main>
@@ -50,7 +63,10 @@ import HeaderView from './components/HeaderView.vue';
   background-color: #d3dce6;
   color: var(--el-text-color-primary);
   text-align: center;
-  line-height: 200px;
+  line-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .el-main {
@@ -70,5 +86,11 @@ body > .el-container {
 }
 .el-container.is-vertical {
   height: 100vh;
+}
+
+.el-button-group > .el-button {
+  border-radius: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 </style>
